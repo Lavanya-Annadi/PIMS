@@ -1,24 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User
 # Create your models here.
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-
-import Users
-from Users import models as usermodel
-
-
 class Profile(models.Model):
-    user=models.OneToOneField(Users,on_delete=models.CASCADE)
-    Pistack=models.TextField(default='Intrests')
+    username=models.CharField(max_length=250,default="user")
+    email=models.CharField(max_length=250,default="email")
+    pistack=models.TextField(default='Intrests')
 
-"""@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+    def __str__(self):
+        return f"{self.username} with {self.email} has {self.pistack}"
 
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()"""
+
 
 

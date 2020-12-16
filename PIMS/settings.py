@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'authentication',
     'searchengine',
     'corsheaders',
-    #'userprofile',
+    'userprofile',
     'link',
     'organiser',
     'Users',

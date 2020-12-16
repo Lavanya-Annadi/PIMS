@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate
 import ast
 from .models import User
 from django.http import JsonResponse, HttpResponse
-
+from userprofile.models import Profile
 
 @csrf_exempt
 def signup(request):
@@ -22,6 +22,7 @@ def signup(request):
         Password = var3.get('password')
         print("userdetails", username, email, Password)
         User.objects.create_user(username=username, email=email, password=Password)
+        Profile.objects.create(username=username,email=email)
 
         return JsonResponse({'status': 'ok created'})
 @csrf_exempt

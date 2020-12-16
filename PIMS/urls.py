@@ -23,6 +23,7 @@ from searchengine import views as v
 from collection import views as collect_v
 from organiser import views as org_v
 from Users import views as user_v
+from userprofile import views as prof_v
 urlpatterns = [
     path('admin/',admin.site.urls),
     path('',views.index),
@@ -45,5 +46,8 @@ urlpatterns = [
     path('deleteLink',collect_v.delrow),
     path('saveRank',collect_v.updaterank),
     path('shareCollection',collect_v.sharecoll),
-    path('searchUsers',collect_v.searchuser)
+    path('searchUsers',collect_v.searchuser),
+    #"""profile"""
+    path('profile',prof_v.getprofile)
+
 ]
