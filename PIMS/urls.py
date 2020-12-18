@@ -23,7 +23,10 @@ from searchengine import views as v
 from collection import views as collect_v
 from organiser import views as org_v
 from Users import views as user_v
+from sharedwithme import views as share_v
 from userprofile import views as prof_v
+from connections import views as conn_v
+from trends import views as trend_v
 urlpatterns = [
     path('admin/',admin.site.urls),
     path('',views.index),
@@ -34,11 +37,15 @@ urlpatterns = [
     path('search',v.searchresult),
     #"""organiser Urls"""
     path('addToOrganiser',org_v.addlink),
+    path('saveOrganiser',org_v.addlink),
     path('organiserLinks',org_v.getorganiser),
-    path('deleteLink',org_v.dellink),
+    path('organiser',org_v.getorganiser),
+    path('deleteorgLink',org_v.dellink),
+    path('searchOrganiser',org_v.searchorg),
     path('saveReadStatus',org_v.changeread),
     path('saveScore',org_v.changescore),
     #"""collections urls"""
+    path('collections', collect_v.getcollection),
     path('collectionsNames', collect_v.getcollection),
     path('createCollection',collect_v.createcoll),
     path('saveCollection',collect_v.updatecoll),
@@ -48,6 +55,17 @@ urlpatterns = [
     path('shareCollection',collect_v.sharecoll),
     path('searchUsers',collect_v.searchuser),
     #"""profile"""
-    path('profile',prof_v.getprofile)
+    path('profile',prof_v.getprofile),
 
+#connections
+    path('getMyConnections',conn_v.my_connections),
+    path('getPendingConnections',conn_v.pending_connections),
+    path('searchConnections',conn_v.search_connections),
+    path('connectUser',conn_v.connect),
+    path('disconnectUser',conn_v.disconnect),
+    path('accept',conn_v.accept),
+    #shared
+    path('getSharedWithMeDetails',share_v.getshareddetails),
+    #trends
+    path('trends',trend_v.gettrends)
 ]

@@ -5,8 +5,8 @@ class Profile(models.Model):
     email=models.CharField(max_length=250,default="email")
     pistack=models.TextField(default='Intrests')
 
-    def __str__(self):
-        return f"{self.username} with {self.email} has {self.pistack}"
+    # def __str__(self):
+    #     return f"{self.username} with {self.email} has {self.pistack}"
 
 
 

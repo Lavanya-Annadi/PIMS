@@ -81,3 +81,4 @@ class User(AbstractBaseUser):
     def is_active(self):
 
         return self.active
+

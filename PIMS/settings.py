@@ -49,7 +49,10 @@ INSTALLED_APPS = [
     'link',
     'organiser',
     'Users',
-    'collection'
+    'collection',
+    'connections',
+    'sharedwithme',
+    'trends'
 ]
 INSTALLED_APPS = ['django_cassandra_engine'] + INSTALLED_APPS
 MIDDLEWARE = [

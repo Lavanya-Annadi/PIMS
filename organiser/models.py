@@ -8,6 +8,7 @@ from django.db import models
 
 
 class savelink_org(models.Model):
+    username=models.CharField(max_length=250,null=True)
     url=models.CharField(max_length=500,null=True)
     title = models.CharField(max_length=100,null=True)
     labels = models.CharField(max_length=100,null=True)
